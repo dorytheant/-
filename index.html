@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملف إنجازي</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #eef2f3;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(45deg, #00509e, #003366);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        header:hover {
+            transform: scale(1.02);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.2em;
+        }
+        nav {
+            background-color: #00509e;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            color: #c5c5c5;
+            transform: scale(1.1);
+        }
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 900px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        section h2 {
+            color: #00509e;
+            font-size: 2em;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        section h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50px;
+            height: 3px;
+            background-color: #c5c5c5;
+        }
+        section p, ul {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        ul {
+            list-style: circle;
+            padding-left: 20px;
+        }
+        footer {
+            background: linear-gradient(45deg, #00509e, #003366);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .section-container {
+            display: none;
+        }
+        .section-container.active {
+            display: block;
+        }
+        .btn {
+            display: inline-block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #00509e;
+            color: white;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn:hover {
+            background-color: #003366;
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll('.section-container');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>موقع مخصص لملف إنجاز: لين الواصل</h1>
+        <p>افضل موقع فالعالم</p>
+    </header>
+
+    <nav>
+        <a href="#" onclick="showSection('intro')">المقدمة</a>
+        <a href="#" onclick="showSection('interests')">اهتماماتي</a>
+        <a href="#" onclick="showSection('achievements')">إنجازاتي وتجربتي</a>
+        <a href="#" onclick="showSection('future-goals')">الطموحات المستقبلية</a>
+        <a href="#" onclick="showSection('favorites')">مفضلاتي</a>
+        <a href="#" onclick="showSection('personal-info')">لمحة شخصية</a>
+    </nav>
+
+    <div id="intro" class="section-container active">
+        <section>
+            <h2>المقدمة</h2>
+            <p>اهلًا! الفكرة من هذا الموقع كانت فكرة خارجة عن الصندوق قليلًا, كنت ارغب في جعل ملفي على هيئة موقع لكني مللت بسرعة بسبب ان الموضوع سيأخذا جهد كبير مني لذا تخليت عن الفكرة</p>
+        </section>
+    </div>
+
+    <div id="interests" class="section-container">
+        <section>
+            <h2>اهتماماتي</h2>
+            <p>في فترة من حياتي اهتممت بموضوع كتابة الروايات بحكم اني لم احصل على رواية تروق لي بالكامل. لقد هجرت الفكرة وانا لم انتهي من المسودة الأولى حتى, لكن وجدت كتابة هذه الرواية فكرة جذابة بالكامل</p>
+        </section>
+    </div>
+
+    <div id="achievements" class="section-container">
+        <section>
+            <h2>إنجازاتي وتجربتي</h2>
+            <p>جميع إنجازاتي و تجاربي علمتني الكثير والكثير من الاشياء الممتعة و انا اطمح لتجربة و تحقيق المزيد</p>
+        </section>
+    </div>
+
+    <div id="future-goals" class="section-container">
+        <section>
+            <h2>الطموحات المستقبلية</h2>
+            <p> لقد ذكرت فالسابق مالوظيفة التي اطمح لها, لكن في حقيقة الامر طوحاتي المستقبلية مستحيلة التحقيق لأنني اريد ان اكون في مهن كثيرة فالوقت نفسه. اتمنى لو كان بالأمكان تحقيق هذا الامر</p>
+        </section>
+    </div>
+
+    <div id="favorites" class="section-container">
+        <section>
+            <h2>مفضلاتي</h2>
+            <p>أحب لعب العاب الفيديو, الكتابة والكثير الكثير من الاشياء!</p>
+        </section>
+    </div>
+
+    <div id="personal-info" class="section-container">
+        <section>
+            <h2>لمحة شخصية</h2>
+            <p>شخصيتي مليئة بالمفاجأت الغير متوقعه! لذا يجيب ان تكون على استعداد لهذه الفاجأت</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy;  تم العمل على هذا الموقغ في: 26/12/2024</p>
+    </footer>
+
+</body>
+</html>
